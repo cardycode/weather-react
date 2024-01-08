@@ -33,7 +33,7 @@ export default function MainForecast() {
             className="btn btn-light btn-sm c-button active"
           >
             <a
-              href="#"
+              href="#top"
               id="unit-C"
             >
               C
@@ -45,7 +45,7 @@ export default function MainForecast() {
             className="btn btn-light btn-sm f-button"
           >
             <a
-              href="#"
+              href="#top"
               id="unit-F"
             >
               F
