@@ -5,7 +5,7 @@ import MainForecast from ".//components/MainForecast";
 import Footer from ".//components/Footer";
 import "./App.css";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <div className="container">
@@ -17,12 +17,11 @@ function App() {
           <div className="row">
             <MainForecast />
             Daily forecast
+            <button className="btn btn-primary">Bootstrap</button>
           </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }
-
-export default App;
