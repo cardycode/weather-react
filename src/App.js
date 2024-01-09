@@ -17,11 +17,10 @@ export default function App() {
           <div className="row">
             <MainForecast />
             Daily forecast
-            <button className="btn btn-primary">Bootstrap</button>
           </div>
         </div>
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }
