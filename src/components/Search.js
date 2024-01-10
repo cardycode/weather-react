@@ -9,8 +9,7 @@ export default function Search() {
           <div className="input-group mb-3">
             <input
               type="text"
-              className="form-control"
-              id="city-input"
+              className="form-control city-input"
               aria-describedby="enterCity"
               placeholder="Enter city..."
             />
@@ -23,9 +22,8 @@ export default function Search() {
               </button>
 
               <button
-                className="btn btn-outline-secondary"
+                className="btn btn-outline-secondary locate-button"
                 type="button"
-                id="locate-button"
               >
                 <i className="fa-solid fa-location-dot location-icon"></i>
               </button>

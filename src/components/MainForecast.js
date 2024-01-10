@@ -14,17 +14,9 @@ export default function MainForecast() {
   return (
     <div className="col-md-6 main-forecast">
       <h3>
-        <span
-          className="max-temp"
-          id="primary-color"
-        >
-          {mainforecast.maxTemp}º
-        </span>
+        <span className="max-temp primary-color">{mainforecast.maxTemp}º</span>
         {" / "}
-        <span
-          className="min-temp"
-          id="primary-color"
-        >
+        <span className="min-temp primary-color">
           {mainforecast.minTemp}º
         </span>{" "}
         <span className="metric-control">
@@ -34,7 +26,7 @@ export default function MainForecast() {
           >
             <a
               href="#top"
-              id="unit-C"
+              className="unit-C"
             >
               C
             </a>
@@ -46,7 +38,7 @@ export default function MainForecast() {
           >
             <a
               href="#top"
-              id="unit-F"
+              className="unit-F"
             >
               F
             </a>
@@ -56,21 +48,22 @@ export default function MainForecast() {
 
       <div className="today-text">{mainforecast.weatherConditions}</div>
       <img
-        className="today-img"
+        className="today-img today-icon"
         src={sun}
         alt="Sun"
-        id="today-icon"
       />
 
       <div class="today-specs">
         <div className="temp-now">
-          Currently <span id="primary-color">{mainforecast.nowTemp} º</span>
+          Currently{" "}
+          <span className="primary-color">{mainforecast.nowTemp} º</span>
         </div>
         <div className="humidity">
-          Humidity <span id="primary-color">{mainforecast.humidity}%</span>
+          Humidity{" "}
+          <span className="primary-color">{mainforecast.humidity}%</span>
         </div>
         <div className="wind">
-          Wind <span id="primary-color">{mainforecast.wind} km/h</span>
+          Wind <span className="primary-color">{mainforecast.wind} km/h</span>
         </div>
       </div>
     </div>
