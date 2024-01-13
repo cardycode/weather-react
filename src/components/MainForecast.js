@@ -48,12 +48,12 @@ export default function MainForecast() {
 
       <div className="today-text">{mainforecast.weatherConditions}</div>
       <img
-        className="today-img today-icon"
+        className="today-icon"
         src={sun}
         alt="Sun"
       />
 
-      <div class="today-specs">
+      <div className="today-specs">
         <div className="temp-now">
           Currently{" "}
           <span className="primary-color">{mainforecast.nowTemp} º</span>

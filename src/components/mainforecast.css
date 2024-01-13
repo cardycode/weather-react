@@ -3,7 +3,7 @@
   box-shadow: 10px 10px 20px rgba(200, 202, 225, 0.2);
   border: 3px solid rgb(112, 145, 255, 0.3);
   border-radius: 10px;
-  padding: 10px 0;
+  padding: 10px 40px;
   transition: all 150ms ease;
 }
 
@@ -37,15 +37,15 @@ h3 {
   line-height: 2;
 }
 
-#today-icon {
-  max-width: 60%;
+.today-icon {
+  max-width: 90%;
   display: block;
   margin: 0 auto;
-  padding: 30px 0;
+  padding: 20px 70px;
   transition: all 150ms ease;
 }
 
-#today-icon:hover {
+.today-icon:hover {
   transform: scale(1.05);
 }
 

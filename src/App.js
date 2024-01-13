@@ -10,7 +10,7 @@ export default function App() {
     <div className="App">
       <div className="container">
         <div className="row flex-row-reverse">
-          <Search />
+          <Search defaultLocation="London" />
           <Header />
         </div>
         <div className="container-forecast">
