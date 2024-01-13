@@ -5,9 +5,20 @@ import "./search.css";
 export default function Search(props) {
   const [weatherData, setWeatherData] = useState({ loaded: false, city: null });
 
-  function handleResponse(response) {
-    console.log(response.data);
-    setWeatherData({ loaded: true, city: response.data.name });
+  function handleResponse(apiResponse) {
+    console.log(apiResponse.data);
+    setWeatherData({
+      loaded: true,
+      city: apiResponse.data.name,
+      location: apiResponse.data.name,
+      description: apiResponse.data.weather[0].description,
+      temperature: apiResponse.data.main.temp,
+      maxTemperature: apiResponse.data.main.temp_max,
+      minTemperature: apiResponse.data.main.temp_min,
+      humidity: apiResponse.data.main.humidity,
+      wind: apiResponse.data.wind.speed,
+      icon: `http://openweathermap.org/img/wn/${apiResponse.data.weather[0].icon}@2x.png`,
+    });
   }
 
   function apiCall() {
