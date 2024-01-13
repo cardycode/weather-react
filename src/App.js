@@ -14,6 +14,7 @@ export default function App() {
       loaded: true,
       city: apiResponse.data.name,
       location: apiResponse.data.name,
+      date: new Date(apiResponse.data.dt * 1000),
       description: apiResponse.data.weather[0].description,
       temperature: Math.round(apiResponse.data.main.temp),
       maxTemperature: Math.round(apiResponse.data.main.temp_max),
