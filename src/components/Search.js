@@ -1,30 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import axios from "axios";
 import "./search.css";
 
-export default function Search(props) {
-  const [weatherData, setWeatherData] = useState({ loaded: false, city: null });
-
-  function handleResponse(apiResponse) {
-    console.log(apiResponse.data);
-    setWeatherData({
-      loaded: true,
-      city: apiResponse.data.name,
-      location: apiResponse.data.name,
-      description: apiResponse.data.weather[0].description,
-      temperature: apiResponse.data.main.temp,
-      maxTemperature: apiResponse.data.main.temp_max,
-      minTemperature: apiResponse.data.main.temp_min,
-      humidity: apiResponse.data.main.humidity,
-      wind: apiResponse.data.wind.speed,
-      icon: `http://openweathermap.org/img/wn/${apiResponse.data.weather[0].icon}@2x.png`,
-    });
-  }
-
+export default function Search({
+  defaultLocation,
+  weatherData,
+  handleResponse,
+}) {
   function apiCall() {
     const apiKey = "8161b4309ee03faae957729ba7104797";
     let unit = "Metric";
-    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultLocation}&appid=${apiKey}&units=${unit}`;
+    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${defaultLocation}&appid=${apiKey}&units=${unit}`;
     axios.get(apiURL).then(handleResponse);
   }
 
@@ -36,7 +22,7 @@ export default function Search(props) {
             type="text"
             className="form-control city-input"
             aria-describedby="enterCity"
-            placeholder={weatherData.city}
+            placeholder="Enter a city..."
           />
           <div className="input-group-append">
             <button

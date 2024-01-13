@@ -1,23 +1,16 @@
 import React from "react";
 import "./mainforecast.css";
-import sun from "../img/01d.png";
 
-export default function MainForecast() {
-  let mainforecast = {
-    maxTemp: 14,
-    minTemp: 5,
-    nowTemp: 13,
-    weatherConditions: "sunny",
-    humidity: 40,
-    wind: 9,
-  };
+export default function MainForecast({ weatherData }) {
   return (
     <div className="col-md-6 main-forecast">
       <h3>
-        <span className="max-temp primary-color">{mainforecast.maxTemp}º</span>
+        <span className="max-temp primary-color">
+          {weatherData.maxTemperature}º
+        </span>
         {" / "}
         <span className="min-temp primary-color">
-          {mainforecast.minTemp}º
+          {weatherData.minTemperature}º
         </span>{" "}
         <span className="metric-control">
           <button
@@ -46,24 +39,27 @@ export default function MainForecast() {
         </span>
       </h3>
 
-      <div className="today-text">{mainforecast.weatherConditions}</div>
+      <div className="today-text">{weatherData.description}</div>
+
       <img
         className="today-icon"
-        src={sun}
-        alt="Sun"
+        src={weatherData.icon}
+        alt={weatherData.description}
       />
 
       <div className="today-specs">
         <div className="temp-now">
           Currently{" "}
-          <span className="primary-color">{mainforecast.nowTemp} º</span>
+          <span className="primary-color">
+            {Math.round(weatherData.temperature)} º
+          </span>
         </div>
         <div className="humidity">
           Humidity{" "}
-          <span className="primary-color">{mainforecast.humidity}%</span>
+          <span className="primary-color">{weatherData.humidity}%</span>
         </div>
         <div className="wind">
-          Wind <span className="primary-color">{mainforecast.wind} km/h</span>
+          Wind <span className="primary-color">{weatherData.wind} km/h</span>
         </div>
       </div>
     </div>
